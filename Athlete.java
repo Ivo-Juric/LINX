@@ -19,6 +19,8 @@ public class Athlete {
 		this.gender = gender;
 		this.category = category;
 		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());	
+		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());	
+		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());	
 	}
 }
 
