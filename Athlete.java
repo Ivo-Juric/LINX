@@ -21,6 +21,7 @@ public class Athlete {
 		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());
 		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());
 		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());
+		physicalCondition = new PhysicalCondition(physicalCondition.getSpeed(), physicalCondition.getEndurance());
 		
 	}
 }
