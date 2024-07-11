@@ -2,12 +2,18 @@ import java.util.*;
 
 public class PhysicalCondition {
 
-    private float speed;
-    private float endurance;
+    private double swimmingFitness;
+	private double cyclingFitness;
+	private double pedestrianFitness;
+	private double resistance;
+	private double psychologicalStrength;
     
-    public PhysicalCondition (float speed, float endurance) {
-  		this.speed = speed;
-  		this.endurance = endurance;
+    public PhysicalCondition (double swimmingFitness, double cyclingFitness, double pedestrianFitness, double resistance, double psychologicalStrength) {
+  		this.swimmingFitness = swimmingFitness;
+		this.cyclingFitness = cyclingFitness;
+		this.pedestrianFitness = pedestrianFitness;
+		this.resistance = resistance;
+		this.psychologicalStrength = psychologicalStrength;
   	}
 
 	public float boostEnergy(Food food) {
@@ -18,11 +24,23 @@ public class PhysicalCondition {
         return 0.0f;
     }
 
-	public float getSpeed() {
-		return speed;
+	public double getSwimmingFitness() {
+		return swimmingFitness;
 	}
 
-	public float getEndurance() {
-		return endurance;
+	public double getCyclingFitness() {
+		return cyclingFitness;
+	}
+
+	public double getPedestrianFitness() {
+		return pedestrianFitness;
+	}
+
+	public double getResistance() {
+		return resistance;
+	}
+
+	public double getPsychologicalStrength() {
+		return psychologicalStrength;
 	}
 }
