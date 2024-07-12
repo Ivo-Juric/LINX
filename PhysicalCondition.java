@@ -1,12 +1,13 @@
+
 import java.util.*;
 
 public class PhysicalCondition {
 
-    private double swimmingFitness;
-	private double cyclingFitness;
-	private double pedestrianFitness;
-	private double resistance;
-	private double psychologicalStrength;
+	private double swimmingFitness;
+    private double cyclingFitness;
+    private double pedestrianFitness;
+    private double resistance;
+    private double psychologicalStrength;
     
     public PhysicalCondition (double swimmingFitness, double cyclingFitness, double pedestrianFitness, double resistance, double psychologicalStrength) {
   		this.swimmingFitness = swimmingFitness;
