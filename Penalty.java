@@ -11,4 +11,12 @@ public class Penalty {
     	this.disqualifications = disqualifications;
     }
 
+    public String getDescription() {
+		return description;
+	}
+
+	public String getDisqualifications() {
+		return disqualifications;
+	}
+
 }

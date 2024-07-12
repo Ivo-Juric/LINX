@@ -11,4 +11,12 @@ public class Modality {
     	distanceDisipline = new DistanceDiscipline (distanceDisipline.getDistance(), distanceDisipline.getTime(), distanceDisipline.getDiscipline());
     }
     
+	public String getDescription() {
+		return description;
+	}
+
+	public DistanceDiscipline getDistanceDisipline() {
+		return distanceDisipline;
+	}
+
 }

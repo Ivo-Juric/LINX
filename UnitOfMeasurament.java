@@ -17,4 +17,8 @@ public class UnitOfMeasurament {
         return "";
     }
 
+    public String getDescription() {
+		return description;
+	}
+
 }

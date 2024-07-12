@@ -10,4 +10,8 @@ public class Competition extends Athlete {
 		super(number, surname, name, id, nationality, birthdate, gender, category, weight, height, finishedRaces, economicBudget, rank, physicalCondition);
 		this.subCategory = subCategory;
 	}
+
+	public int getSubCategory() {
+		return subCategory;
+	}
 }

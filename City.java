@@ -11,4 +11,12 @@ public class City {
     	this.country = country;
     }
 
+	public String getCityName() {
+		return cityName;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
 }

@@ -17,4 +17,29 @@ public class Race {
     	provisioning = new Provisioning (provisioning.getDistanceKm(), provisioning.getFood(), provisioning.getDrink());
     	climaticCondition = new ClimaticCondition (climaticCondition.getTemperature(), climaticCondition.getHumidity(), climaticCondition.getWindSpeed(), climaticCondition.getUnitOfMeasurament());
     }
+
+	public Date getDate() {
+		return date;
+	}
+
+	public Athlete getAthlete() {
+		return athlete;
+	}
+
+	public Modality getModality() {
+		return modality;
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public Provisioning getProvisioning() {
+		return provisioning;
+	}
+
+	public ClimaticCondition getClimaticCondition() {
+		return climaticCondition;
+	}
+	
 }

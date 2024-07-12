@@ -11,4 +11,8 @@ public abstract class Cycling extends Discipline {
 
     public abstract Penalty penalty();
 
+    public boolean isDraft() {
+		return draft;
+	} 
+
 }

@@ -8,4 +8,8 @@ public class Country {
     public Country() {
     }
 
+    public String getCountryName() {
+		return countryName;
+	}
+
 }
