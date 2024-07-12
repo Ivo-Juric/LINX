@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class Modality {
 
 	private String description;

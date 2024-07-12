@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class PhysicalCondition {
 
 	private double swimmingFitness;

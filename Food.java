@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class Food implements foodBoost {
 
     public Food() {

@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public abstract class Cycling extends Discipline {
 
 	private boolean draft;

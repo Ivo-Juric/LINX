@@ -1,7 +1,4 @@
 
-import java.util.*;
-
-
 public abstract class Swimming extends Discipline {
 
 

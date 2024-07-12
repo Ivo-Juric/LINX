@@ -11,7 +11,7 @@ public class Competition extends Athlete {
 		this.subCategory = subCategory;
 	}
 
-	public int getSubCategory() {
+	public String getSubCategory() {
 		return subCategory;
 	}
 }

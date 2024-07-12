@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class UnitOfMeasurament {
 
 	private String description;
