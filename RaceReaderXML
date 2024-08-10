@@ -1,0 +1,58 @@
+package Controlador;
+
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+import java.util.ArrayList;
+
+public class RaceXMLReader {
+
+	public static void main(String[] args){
+        ArrayList<Race> races = new ArrayList<>();
+        try {
+            File xmlFile = new File(filePath);
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(xmlFile);
+            doc.getDocumentElement().normalize();
+            NodeList raceList = doc.getElementsByTagName("Race");
+
+            for (int i = 0; i < raceList.getLength(); i++) {
+                Node raceNode = raceList.item(i);
+                if (raceNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element raceElement = (Element) raceNode;
+                    String dateString = raceElement.getElementsByTagName("Date").item(0).getTextContent();
+                    Date date = Date.valueOf(dateString);
+                    Element modalityElement = (Element) raceElement.getElementsByTagName("Modality").item(0);
+                    String modalityName = modalityElement.getElementsByTagName("Name").item(0).getTextContent();
+                    Modality modality = new Modality(modalityName);
+                    Element cityElement = (Element) raceElement.getElementsByTagName("City").item(0);
+                    String cityName = cityElement.getElementsByTagName("Name").item(0).getTextContent();
+                    Country countryName = cityElement.getElementsByTagName("Country").item(0).getTextContent();
+                    City city = new City(cityName, countryName);
+                    Element provisioningElement = (Element) raceElement.getElementsByTagName("Provisioning").item(0);
+                    float distanceKm = Float.parseFloat(provisioningElement.getElementsByTagName("DistanceKm").item(0).getTextContent());
+                    Element foodElement = (Element) provisioningElement.getElementsByTagName("Food").item(0);
+                    String foodType = foodElement.getElementsByTagName("Type").item(0).getTextContent();
+                    Food food = new Food(foodType);
+                    Element drinkElement = (Element) provisioningElement.getElementsByTagName("Drink").item(0);
+                    String drinkType = drinkElement.getElementsByTagName("Type").item(0).getTextContent();
+                    Drink drink = new Drink(drinkType);
+                    Provisioning provisioning = new Provisioning(distanceKm, food, drink);
+                    Element climaticConditionElement = (Element) raceElement.getElementsByTagName("ClimaticCondition").item(0);
+                    float temperature = Float.parseFloat(climaticConditionElement.getElementsByTagName("Temperature").item(0).getTextContent());
+                    float humidity = Float.parseFloat(climaticConditionElement.getElementsByTagName("Humidity").item(0).getTextContent());
+                    float windSpeed = Float.parseFloat(climaticConditionElement.getElementsByTagName("WindSpeed").item(0).getTextContent());
+                    String unit = climaticConditionElement.getElementsByTagName("UnitOfMeasurement").item(0).getTextContent();
+                    UnitOfMeasurement unitOfMeasurement = new UnitOfMeasurement(unit);
+                    ClimaticCondition climaticCondition = new ClimaticCondition(temperature, humidity, windSpeed, unitOfMeasurement);
+                    Race race = new Race(date, modality, city, provisioning, climaticCondition);
+                    races.add(race);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return races;
+    }
+}
