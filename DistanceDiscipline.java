@@ -6,6 +6,7 @@ public class DistanceDiscipline {
 	private float distance;
     private Date time; 
     private Discipline discipline; // Asociacion
+	private Discipline discipline;
 	
     public DistanceDiscipline(float distance, Date time, Discipline discipline) {
     	this.distance = distance;
