@@ -15,8 +15,17 @@ public class PhysicalCondition {
 		this.psychologicalStrength = psychologicalStrength;
   	}
 
-	public float boostEnergy(Food food) {
-        return 0.0f;
+	public void boostEnergy(Food food, Drink drink) {
+        if (food){
+			this.cyclingFitness += food.boost;
+			this.resistance+= food.boost;
+			this.pedestrianFitness += food.boost;
+		}
+		if (drink){
+			this.swimmingFitness += drink.boost;
+			this.resistance+= drink.boost;
+			this.psychologicalStrength += drink.boost;
+		}
     }
 
     public float energyWear(float speed, ClimaticCondition climaticCondition) {

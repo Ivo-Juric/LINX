@@ -4,7 +4,8 @@ public class Food implements foodBoost {
     public Food() {
     }
 
-    public void boost() {
+    public float boost() {
+        return 10;
     }
 
 }

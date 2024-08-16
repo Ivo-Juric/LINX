@@ -1,6 +1,5 @@
 
 public interface foodBoost {
 
-    public void boost();
-
+    public float boost();
 }
