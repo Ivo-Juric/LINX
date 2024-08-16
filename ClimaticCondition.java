@@ -24,8 +24,16 @@ public class ClimaticCondition {
 		return windSpeed;
 	}
 
-	public UnitOfMeasurament getUnitOfMeasurament() {
-		return unitOfMeasurament;
+	public void setTemperature(float temperature) {
+		this.temperature = temperature;
 	}
 
+	public void setHumidity(float humidity) {
+		this.humidity = humidity;
+	}
+
+	public void setWindSpeed(float windSpeed) {
+		this.windSpeed = windSpeed;
+	}
+	
 }
