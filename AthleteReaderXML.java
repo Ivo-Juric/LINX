@@ -7,7 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.*;
 
-public class xml_read {
+public class AthleteReaderXML{
     public static void main(String[] args) {
         List<Athlete> athletes = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
