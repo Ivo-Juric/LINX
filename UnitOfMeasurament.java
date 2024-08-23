@@ -16,7 +16,7 @@ public class UnitOfMeasurament {
                 this.description ="Temperatura cálida: ";
                 else if (temperature > 34 && temperature < 51)
                         this.description ="Alta temperatura: ";
-        this.description = this.description + temperature + "Cº"
+        this.description = this.description + temperature + "Cº";
 
         return this.description;
     }
@@ -27,7 +27,7 @@ public class UnitOfMeasurament {
         else if (wind > -1 && wind < 31)
                 this.description = "Viento a favor: ";
 
-        this.description = this.description + wind + "Km/h"
+        this.description = this.description + wind + "Km/h";
         
         return this.description;
     }

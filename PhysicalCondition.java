@@ -66,15 +66,15 @@ public class PhysicalCondition {
 		return pedestrianFitness;
 	}
 
-	public void setSwimmingFitness(float change) {
+	public void setSwimmingFitness(double change) {
 		 this.swimmingFitness += change;
 	}
 
-	public void setCyclingFitness(float change) {
+	public void setCyclingFitness(double change) {
 		this.cyclingFitness += change;
 	}
 
-	public void setPedestrianFitness(float change) {
+	public void setPedestrianFitness(double change) {
 		this.pedestrianFitness += change;
 	}
 
