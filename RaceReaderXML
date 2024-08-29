@@ -22,13 +22,14 @@ public class RaceReaderXML {
                     String ciudad = eElement.getElementsByTagName("ciudad").item(0).getTextContent();
                     String pais = eElement.getElementsByTagName("pais").item(0).getTextContent();
                     String fecha = eElement.getElementsByTagName("fecha").item(0).getTextContent();
-                    String modalidad = eElement.getElementsByTagName("modalidad").item(0).getTextContent();
+                    String modalidadDesc = eElement.getElementsByTagName("modalidad").item(0).getTextContent();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     Date raceDate = sdf.parse(fecha);
                     City city = new City(ciudad, pais);
-                    Modality modality = new Modality(modalidad);
-                    Provisioning provisioning = new Provisioning();
-                    ClimaticCondition climaticCondition = new ClimaticCondition();
+                    DistanceDiscipline distanceDiscipline = new DistanceDiscipline(); 
+                    Modality modality = new Modality(modalidadDesc, distanceDiscipline);
+                    Provisioning provisioning = parseProvisioning(eElement);
+                    ClimaticCondition climaticCondition = new ClimaticCondition(0, 0, 0, null); 
                     Race race = new Race(raceDate, modality, city, provisioning, climaticCondition);
                     races.add(race);
                 }
@@ -36,5 +37,16 @@ public class RaceReaderXML {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private static Provisioning parseProvisioning(Element eElement) {
+        NodeList provisioningList = eElement.getElementsByTagName("puestos_aprovisionamiento");
+        for (int i = 0; i < provisioningList.getLength(); i++) {
+            Element provisioningElement = (Element) provisioningList.item(i);
+            float distanceKm = Float.parseFloat(provisioningElement.getElementsByTagName("distancia").item(0).getTextContent());
+            Food food = new Food(); 
+            Drink drink = new Drink();
+            return new Provisioning(distanceKm, food, drink);
+        }
+        return null;
     }
 }
